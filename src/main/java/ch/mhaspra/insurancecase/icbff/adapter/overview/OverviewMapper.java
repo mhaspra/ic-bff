@@ -13,7 +13,7 @@ public class OverviewMapper {
         return new Overview(Arrays.stream(partner).map(OverviewMapper::map).toList());
     }
 
-    private static Customer map(PartnerDto partnerDto){
+    public static Customer map(PartnerDto partnerDto){
         return new Customer(new CustomerNumber(partnerDto.partnerNr()), new Name(partnerDto.name()), ContractMapper.map(partnerDto.contracts()));
     }
 }

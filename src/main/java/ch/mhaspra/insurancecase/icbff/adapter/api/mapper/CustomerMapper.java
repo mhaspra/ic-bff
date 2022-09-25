@@ -10,7 +10,7 @@ public class CustomerMapper {
         return customer.stream().map(CustomerMapper::map).toList();
     }
 
-    private static CustomerWithContracts map(Customer customer) {
+    public static CustomerWithContracts map(Customer customer) {
         return new CustomerWithContracts()
                 .id(customer.customerNumber().value())
                 .name(customer.name().value())

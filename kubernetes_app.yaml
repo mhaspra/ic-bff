@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ic-bff-deployment
+  labels:
+    app: ic-bff
+spec:
+  selector:
+    matchLabels:
+      app: ic-bff
+  template:
+    metadata:
+      labels:
+        app: ic-bff
+    spec:
+      containers:
+      - name: ic-bff-container
+        image: ic-bff:1.0
+        ports:
+          - containerPort: 8080
